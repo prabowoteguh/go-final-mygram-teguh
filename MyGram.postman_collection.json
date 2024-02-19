@@ -1,0 +1,1539 @@
+{
+	"info": {
+		"_postman_id": "b3f838f0-d693-422a-980f-6f1577d7be45",
+		"name": "MyGram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11831418",
+		"_collection_link": "https://www.postman.com/prabowoteguh/workspace/0145f33e-a7e3-4af1-8d52-4ba2fe0b6b73/collection/11831418-b3f838f0-d693-422a-980f-6f1577d7be45?action=share&source=collection_link&creator=11831418"
+	},
+	"item": [
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "Create Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Beach",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"value": "https://images.unsplash.com/photo-1707343843598-39755549ac9a?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Foto Pantai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/photos",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create First Photo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Foto Pertama",
+											"type": "text"
+										},
+										{
+											"key": "photo_url",
+											"value": "https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+											"type": "text"
+										},
+										{
+											"key": "caption",
+											"value": "ini adalah foto pertama aink cuy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/photos",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:20:56 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n    \"UpdatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n    \"DeletedAt\": null,\n    \"title\": \"Foto Pertama\",\n    \"photo_url\": \"https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n    \"caption\": \"ini adalah foto pertama aink cuy\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						},
+						{
+							"name": "Create Second Photo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Beach",
+											"type": "text"
+										},
+										{
+											"key": "photo_url",
+											"value": "https://images.unsplash.com/photo-1707343843598-39755549ac9a?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+											"type": "text"
+										},
+										{
+											"key": "caption",
+											"value": "Foto Pantai",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/photos",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:23:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "386"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 2,\n    \"CreatedAt\": \"2024-02-16T09:23:28.78337+07:00\",\n    \"UpdatedAt\": \"2024-02-16T09:23:28.78337+07:00\",\n    \"DeletedAt\": null,\n    \"title\": \"Beach\",\n    \"photo_url\": \"https://images.unsplash.com/photo-1707343843598-39755549ac9a?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n    \"caption\": \"Foto Pantai\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/photos",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed not login",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/photos",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:23:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error_message\": \"sign in to proceed\",\n    \"error_status\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "Success Get All Photo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/photos",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:24:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "805"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"ID\": 1,\n        \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n        \"UpdatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n        \"DeletedAt\": null,\n        \"title\": \"Foto Pertama\",\n        \"photo_url\": \"https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n        \"caption\": \"ini adalah foto pertama aink cuy\",\n        \"UserID\": 1,\n        \"User\": null\n    },\n    {\n        \"ID\": 2,\n        \"CreatedAt\": \"2024-02-16T09:23:28.78337+07:00\",\n        \"UpdatedAt\": \"2024-02-16T09:23:28.78337+07:00\",\n        \"DeletedAt\": null,\n        \"title\": \"Beach\",\n        \"photo_url\": \"https://images.unsplash.com/photo-1707343843598-39755549ac9a?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n        \"caption\": \"Foto Pantai\",\n        \"UserID\": 1,\n        \"User\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get One Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/photos/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"photos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One Photo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/photos/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:31:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n    \"UpdatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n    \"DeletedAt\": null,\n    \"title\": \"Foto Pertama\",\n    \"photo_url\": \"https://images.unsplash.com/photo-1679065949530-7bb1fba3ccb3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n    \"caption\": \"ini adalah foto pertama aink cuy\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Judulnya ganti",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "Captionnya ganti",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"value": "https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/photos/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"photos",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Photo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Judulnya ganti",
+											"type": "text"
+										},
+										{
+											"key": "caption",
+											"value": "Captionnya ganti",
+											"type": "text"
+										},
+										{
+											"key": "photo_url",
+											"value": "https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/photos/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:34:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "389"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n    \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n    \"DeletedAt\": null,\n    \"title\": \"Judulnya ganti\",\n    \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n    \"caption\": \"Captionnya ganti\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/photos/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"photos",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Photo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/photos/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"photos",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:37:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"photo with id 3 has been successfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register MyGram",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "farras",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "farras@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "26",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Failed Register MyGram",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "farras",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "farras@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:21:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Bad Request\",\n    \"message\": \"Age must be greater than 8\"\n}"
+						},
+						{
+							"name": "Register MyGram",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "farras",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "farras@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "26",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/register",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 02:21:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"age\": 26,\n    \"email\": \"farras@mail.com\",\n    \"id\": 2,\n    \"username\": \"farras\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login MyGram",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "alfa@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login MyGram",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "alfa@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/users/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 01:45:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "136"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Post Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message",
+									"value": "coba comment foto pertama",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comments/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "message",
+											"value": "coba comment foto pertama",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/comments/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"comments",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 03:44:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 18,\n    \"CreatedAt\": \"2024-02-16T10:44:31.243673+07:00\",\n    \"UpdatedAt\": \"2024-02-16T10:44:31.243673+07:00\",\n    \"DeletedAt\": null,\n    \"message\": \"coba comment foto pertama\",\n    \"UserID\": 1,\n    \"User\": null,\n    \"PhotoID\": 1,\n    \"Photo\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Comment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/comments",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:05:06 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"comments\": [\n        {\n            \"ID\": 14,\n            \"CreatedAt\": \"2024-02-16T10:36:28.712273+07:00\",\n            \"UpdatedAt\": \"2024-02-16T10:36:28.712273+07:00\",\n            \"DeletedAt\": null,\n            \"message\": \"coba comment foto pertama\",\n            \"UserID\": 1,\n            \"User\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"DeletedAt\": null,\n                \"username\": \"alfa\",\n                \"email\": \"alfa@mail.com\",\n                \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n                \"age\": 9,\n                \"photos\": null,\n                \"comments\": null,\n                \"social_media\": null\n            },\n            \"PhotoID\": 1,\n            \"Photo\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n                \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n                \"DeletedAt\": null,\n                \"title\": \"Judulnya ganti\",\n                \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n                \"caption\": \"Captionnya ganti\",\n                \"UserID\": 1,\n                \"User\": null\n            }\n        },\n        {\n            \"ID\": 16,\n            \"CreatedAt\": \"2024-02-16T10:42:44.593117+07:00\",\n            \"UpdatedAt\": \"2024-02-16T11:04:04.363957+07:00\",\n            \"DeletedAt\": null,\n            \"message\": \"Update comment dulu\",\n            \"UserID\": 1,\n            \"User\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"DeletedAt\": null,\n                \"username\": \"alfa\",\n                \"email\": \"alfa@mail.com\",\n                \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n                \"age\": 9,\n                \"photos\": null,\n                \"comments\": null,\n                \"social_media\": null\n            },\n            \"PhotoID\": 1,\n            \"Photo\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n                \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n                \"DeletedAt\": null,\n                \"title\": \"Judulnya ganti\",\n                \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n                \"caption\": \"Captionnya ganti\",\n                \"UserID\": 1,\n                \"User\": null\n            }\n        },\n        {\n            \"ID\": 17,\n            \"CreatedAt\": \"2024-02-16T10:42:47.696695+07:00\",\n            \"UpdatedAt\": \"2024-02-16T10:42:47.696695+07:00\",\n            \"DeletedAt\": null,\n            \"message\": \"coba comment foto pertama\",\n            \"UserID\": 1,\n            \"User\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"DeletedAt\": null,\n                \"username\": \"alfa\",\n                \"email\": \"alfa@mail.com\",\n                \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n                \"age\": 9,\n                \"photos\": null,\n                \"comments\": null,\n                \"social_media\": null\n            },\n            \"PhotoID\": 1,\n            \"Photo\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n                \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n                \"DeletedAt\": null,\n                \"title\": \"Judulnya ganti\",\n                \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n                \"caption\": \"Captionnya ganti\",\n                \"UserID\": 1,\n                \"User\": null\n            }\n        },\n        {\n            \"ID\": 18,\n            \"CreatedAt\": \"2024-02-16T10:44:31.243673+07:00\",\n            \"UpdatedAt\": \"2024-02-16T10:44:31.243673+07:00\",\n            \"DeletedAt\": null,\n            \"message\": \"coba comment foto pertama\",\n            \"UserID\": 1,\n            \"User\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"DeletedAt\": null,\n                \"username\": \"alfa\",\n                \"email\": \"alfa@mail.com\",\n                \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n                \"age\": 9,\n                \"photos\": null,\n                \"comments\": null,\n                \"social_media\": null\n            },\n            \"PhotoID\": 1,\n            \"Photo\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n                \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n                \"DeletedAt\": null,\n                \"title\": \"Judulnya ganti\",\n                \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n                \"caption\": \"Captionnya ganti\",\n                \"UserID\": 1,\n                \"User\": null\n            }\n        },\n        {\n            \"ID\": 19,\n            \"CreatedAt\": \"2024-02-16T10:51:25.601451+07:00\",\n            \"UpdatedAt\": \"2024-02-16T10:51:25.601451+07:00\",\n            \"DeletedAt\": null,\n            \"message\": \"Komentar kedua nih\",\n            \"UserID\": 1,\n            \"User\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n                \"DeletedAt\": null,\n                \"username\": \"alfa\",\n                \"email\": \"alfa@mail.com\",\n                \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n                \"age\": 9,\n                \"photos\": null,\n                \"comments\": null,\n                \"social_media\": null\n            },\n            \"PhotoID\": 1,\n            \"Photo\": {\n                \"ID\": 1,\n                \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n                \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n                \"DeletedAt\": null,\n                \"title\": \"Judulnya ganti\",\n                \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n                \"caption\": \"Captionnya ganti\",\n                \"UserID\": 1,\n                \"User\": null\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/comments/15",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments",
+								"15"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/comments/15",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"comments",
+										"15"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:02:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"comment with id 15 has been successfully deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "message",
+									"value": "Update comment dulu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comments/16",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments",
+								"16"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Comment",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "message",
+											"value": "Update comment dulu",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/comments/16",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"comments",
+										"16"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:04:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 16,\n    \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n    \"UpdatedAt\": \"2024-02-16T11:04:04.363957+07:00\",\n    \"DeletedAt\": null,\n    \"message\": \"Update comment dulu\",\n    \"UserID\": 1,\n    \"User\": null,\n    \"PhotoID\": 0,\n    \"Photo\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One Comment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/comments/14",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"comments",
+								"14"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One Comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/comments/14",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"comments",
+										"14"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:23:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "904"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"comment\": {\n        \"ID\": 14,\n        \"CreatedAt\": \"2024-02-16T10:36:28.712273+07:00\",\n        \"UpdatedAt\": \"2024-02-16T10:36:28.712273+07:00\",\n        \"DeletedAt\": null,\n        \"message\": \"coba comment foto pertama\",\n        \"UserID\": 1,\n        \"User\": {\n            \"ID\": 1,\n            \"CreatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n            \"UpdatedAt\": \"2024-02-13T16:18:36.717295+07:00\",\n            \"DeletedAt\": null,\n            \"username\": \"alfa\",\n            \"email\": \"alfa@mail.com\",\n            \"password\": \"$2a$08$xunMy1yQGACQSwKTzwWusuCM1v4c13IlQKXkxEpfoez93JqYC4ndm\",\n            \"age\": 9,\n            \"photos\": null,\n            \"comments\": null,\n            \"social_media\": null\n        },\n        \"PhotoID\": 1,\n        \"Photo\": {\n            \"ID\": 1,\n            \"CreatedAt\": \"2024-02-16T09:20:56.460191+07:00\",\n            \"UpdatedAt\": \"2024-02-16T09:34:12.39539+07:00\",\n            \"DeletedAt\": null,\n            \"title\": \"Judulnya ganti\",\n            \"photo_url\": \"https://images.unsplash.com/photo-1707696199186-d26b0f779f30?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n            \"caption\": \"Captionnya ganti\",\n            \"UserID\": 1,\n            \"User\": null\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Social Media",
+			"item": [
+				{
+					"name": "Create Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Alfa",
+									"type": "text"
+								},
+								{
+									"key": "social_media_url",
+									"value": "alfa@instagram.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/socialmedias",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"socialmedias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Social Media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Alfa",
+											"type": "text"
+										},
+										{
+											"key": "social_media_url",
+											"value": "alfa@instagram.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/socialmedias",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"socialmedias"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:32:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n    \"UpdatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n    \"DeletedAt\": null,\n    \"name\": \"Alfa\",\n    \"social_media_url\": \"alfa@instagram.com\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/socialmedias/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"socialmedias",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One Social Media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/socialmedias/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"socialmedias",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 04:36:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n    \"UpdatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n    \"DeletedAt\": null,\n    \"name\": \"Alfa\",\n    \"social_media_url\": \"alfa@instagram.com\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "bimo",
+									"type": "text"
+								},
+								{
+									"key": "social_media_url",
+									"value": "bimo@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/socialmedias/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"socialmedias",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Social Media",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "bimo",
+											"type": "text"
+										},
+										{
+											"key": "social_media_url",
+											"value": "bimo@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/socialmedias/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"socialmedias",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 05:05:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "179"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ID\": 3,\n    \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n    \"UpdatedAt\": \"2024-02-16T12:05:06.03972+07:00\",\n    \"DeletedAt\": null,\n    \"name\": \"bimo\",\n    \"social_media_url\": \"bimo@gmail.com\",\n    \"UserID\": 1,\n    \"User\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/socialmedias",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"socialmedias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Social Media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/socialmedias",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"socialmedias"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 05:08:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "586"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"ID\": 1,\n        \"CreatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n        \"UpdatedAt\": \"2024-02-16T11:32:53.000673+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Alfa\",\n        \"social_media_url\": \"alfa@instagram.com\",\n        \"UserID\": 1,\n        \"User\": null\n    },\n    {\n        \"ID\": 2,\n        \"CreatedAt\": \"2024-02-16T12:03:01.119968+07:00\",\n        \"UpdatedAt\": \"2024-02-16T12:03:01.119968+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"anjoy\",\n        \"social_media_url\": \"anjoy@google.com\",\n        \"UserID\": 1,\n        \"User\": null\n    },\n    {\n        \"ID\": 3,\n        \"CreatedAt\": \"2024-02-16T12:03:13.324375+07:00\",\n        \"UpdatedAt\": \"2024-02-16T12:05:06.03972+07:00\",\n        \"DeletedAt\": null,\n        \"name\": \"bimo\",\n        \"social_media_url\": \"bimo@gmail.com\",\n        \"UserID\": 1,\n        \"User\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZmFAbWFpbC5jb20iLCJpZCI6MX0.CruDbZWyA_ygWV_1TwVEwwBR8n26V7ePvNcI5vWtSVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/socialmedias/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"socialmedias",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Social Media",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/socialmedias/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"socialmedias",
+										"2"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 05:09:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"socialmedia with id 2 has been successfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
