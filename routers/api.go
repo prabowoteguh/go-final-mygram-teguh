@@ -18,29 +18,29 @@ func StartApp() *gin.Engine {
 	apiGroup := router.Group("/api")
 	{
 		apiGroup.Use(middlewares.Authentication())
-		photo := apiGroup.Group("/photo")
+		photo := apiGroup.Group("/photos")
 		{
 			photo.GET("/", controllers.GetAllPhoto)
 			photo.GET("/:photoId", controllers.GetOnePhoto)
 			photo.POST("/", controllers.CreatePhoto)
-			photo.PUT("/:photoId", controllers.UpdatePhoto)
-			photo.DELETE("/:photoId", controllers.DeletePhoto)
+			photo.PUT("/:photoId", middlewares.PhotoAuthorization(), controllers.UpdatePhoto)
+			photo.DELETE("/:photoId", middlewares.PhotoAuthorization(), controllers.DeletePhoto)
 		}
-		comment := apiGroup.Group("/comment")
+		comment := apiGroup.Group("/comments")
 		{
 			comment.GET("/", controllers.GetAllComment)
 			comment.GET("/:commentId", controllers.GetOneComment)
 			comment.POST("/", controllers.CreateComment)
-			comment.PUT("/:commentId", controllers.UpdateComment)
-			comment.DELETE("/:commentId", controllers.DeleteComment)
+			comment.PUT("/:commentId", middlewares.CommentAuthorization(), controllers.UpdateComment)
+			comment.DELETE("/:commentId", middlewares.CommentAuthorization(), controllers.DeleteComment)
 		}
-		socialmedia := apiGroup.Group("/socialmedia")
+		socialmedia := apiGroup.Group("/socialmedias")
 		{
 			socialmedia.GET("/", controllers.GetAllSocialMedia)
 			socialmedia.GET("/:socialMediaId", controllers.GetOneSocialMedia)
 			socialmedia.POST("/", controllers.CreateSocialMedia)
-			socialmedia.PUT("/:socialMediaId", controllers.UpdateSocialMedia)
-			socialmedia.DELETE("/:socialMediaId", controllers.DeleteSocialMedia)
+			socialmedia.PUT("/:socialMediaId", middlewares.SocialMediaAuthorization(), controllers.UpdateSocialMedia)
+			socialmedia.DELETE("/:socialMediaId", middlewares.SocialMediaAuthorization(), controllers.DeleteSocialMedia)
 		}
 	}
 

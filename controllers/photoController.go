@@ -14,64 +14,52 @@ import (
 )
 
 func GetAllPhoto(c *gin.Context) {
-	var (
-		photo []models.Photo
-	)
-
 	db := database.GetDB()
-	userData := c.MustGet("userData").(jwt.MapClaims)
-	contentType := helpers.GetContentType(c)
+	Photos := []models.Photo{}
 
-	Photo := models.Photo{}
-	userID := uint(userData["id"].(float64))
+	err := db.Find(&Photos).Error
 
-	if contentType == appJSON {
-		c.ShouldBindJSON(&Photo)
-	} else {
-		c.ShouldBind(&Photo)
-	}
-	Photo.UserId = userID
-
-	if err := db.Model(&models.Photo{}).Order("created_at asc").Find(&photo).Error; err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
-			"result": fmt.Sprintf("Error Getting Order Data: %v", err.Error()),
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "Bad Request",
+			"message": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"result": photo,
-	})
+	c.JSON(http.StatusCreated, Photos)
 }
 
 func GetOnePhoto(c *gin.Context) {
-	var (
-		commentId string
-		comment   models.Photo
-	)
 	db := database.GetDB()
-	commentId = c.Param("commentId")
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	Photo := models.Photo{}
 
-	if err := db.First(&models.Photo{}, "id = ?", commentId).Find(&comment).Error; err != nil {
-		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
-			"result": fmt.Sprintf("comment with id %v Not Found", commentId),
+	photoId, _ := strconv.Atoi(c.Param("photoId"))
+	userID := uint(userData["id"].(float64))
+
+	Photo.UserId = userID
+	Photo.ID = uint(photoId)
+
+	err := db.First(&Photo, "id = ?", photoId).Error
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "Bad Request",
+			"message": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"success": true,
-		"message": "Data found",
-		"comment": comment,
-	})
+	c.JSON(http.StatusCreated, Photo)
 }
 
 func CreatePhoto(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
-
 	Photo := models.Photo{}
+
 	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
@@ -79,12 +67,14 @@ func CreatePhoto(c *gin.Context) {
 	} else {
 		c.ShouldBind(&Photo)
 	}
+
 	Photo.UserId = userID
+
 	err := db.Debug().Create(&Photo).Error
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"err":     "Bad Request",
+			"error":   "Bad Request",
 			"message": err.Error(),
 		})
 		return
@@ -98,8 +88,9 @@ func UpdatePhoto(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
 	Photo := models.Photo{}
+
 	photoId, _ := strconv.Atoi(c.Param("photoId"))
-	userId := uint(userData["id"].(float64))
+	userID := uint(userData["id"].(float64))
 
 	if contentType == appJSON {
 		c.ShouldBindJSON(&Photo)
@@ -107,42 +98,46 @@ func UpdatePhoto(c *gin.Context) {
 		c.ShouldBind(&Photo)
 	}
 
-	Photo.UserId = userId
+	Photo.UserId = userID
 	Photo.ID = uint(photoId)
-	err := db.Model(&Photo).Where("id=?", photoId).Updates(models.Photo{UserId: userId, Url: Photo.Url}).Error
+
+	err := db.Model(&Photo).Where("id = ?", photoId).Updates(models.Photo{Title: Photo.Title, Caption: Photo.Caption, PhotoUrl: Photo.PhotoUrl}).Error
+
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"err":     "Bad Request",
+			"error":   "Bad Request",
 			"message": err.Error(),
 		})
 		return
 	}
-	c.JSON(http.StatusOK, Photo)
+
+	c.JSON(http.StatusCreated, Photo)
 }
 
 func DeletePhoto(c *gin.Context) {
-	var (
-		photoId string
-	)
 	db := database.GetDB()
-	photoId = c.Param("photoId")
+	userData := c.MustGet("userData").(jwt.MapClaims)
+	Photo := models.Photo{}
 
-	if err := db.First(&models.Photo{}, "id = ?", photoId).Error; err != nil {
-		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
-			"result": fmt.Sprintf("Photo with id %v Not Found", photoId),
+	photoId, _ := strconv.Atoi(c.Param("photoId"))
+	userID := uint(userData["id"].(float64))
+
+	Photo.UserId = userID
+	Photo.ID = uint(photoId)
+
+	err := db.First(&Photo, "id = ?", photoId).Error
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "Bad Request",
+			"message": err.Error(),
 		})
 		return
 	}
 
-	if err := db.Where("id = ?", photoId).Delete(&models.Photo{}).Error; err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
-			"result": fmt.Sprintf("Error Deleting Photo: %v", err.Error()),
-		})
-		return
-	}
+	db.Delete(&Photo)
 
-	c.JSON(http.StatusOK, gin.H{
-		"message": fmt.Sprintf("Photo with id %v Has Been Successfully Deleted", photoId),
-		"success": true,
+	c.JSON(http.StatusCreated, gin.H{
+		"message": fmt.Sprintf("photo with id %v has been successfully deleted", photoId),
 	})
 }

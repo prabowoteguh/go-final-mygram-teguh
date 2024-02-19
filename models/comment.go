@@ -9,7 +9,9 @@ type Comment struct {
 	GormModel
 	Message string `json:"message" form:"message" valid:"required~message of your comment is required"`
 	UserId  uint
-	PhotoId uint `json:"photo_id" form:"photo_id" valid:"required~photo_id of your comment is required"`
+	User    *User
+	PhotoId uint
+	Photo   *Photo
 }
 
 func (p *Comment) BeforeCreate(tx *gorm.DB) (err error) {
@@ -25,12 +27,25 @@ func (p *Comment) BeforeCreate(tx *gorm.DB) (err error) {
 }
 
 func (p *Comment) BeforeUpdate(tx *gorm.DB) (err error) {
-	_, errCreate := govalidator.ValidateStruct(p)
+	_, errUpdate := govalidator.ValidateStruct(p)
 
-	if errCreate != nil {
-		err = errCreate
+	if errUpdate != nil {
+		err = errUpdate
 		return
 	}
+
+	err = nil
+	return
+}
+
+func (p *Comment) BeforeDelete(tx *gorm.DB) (err error) {
+	_, errDelete := govalidator.ValidateStruct(p)
+
+	if errDelete != nil {
+		err = errDelete
+		return
+	}
+
 	err = nil
 	return
 }
